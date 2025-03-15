@@ -10,7 +10,7 @@ const AddNote = () => {
     const saveNote = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://35.232.131.240/note', { judul, isi });
+            await axios.post('http://35.232.131.240:5000/note', { judul, isi });
             navigate("/");
         } catch (error) {
             console.log(error);

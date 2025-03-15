@@ -15,7 +15,7 @@ const EditNote = () => {
     const updateNote = async (e) => {
         e.preventDefault();
         try {
-            await axios.patch(`http://35.232.131.240/note/${id}`, { judul, isi });
+            await axios.patch(`http://35.232.131.240:5000/note/${id}`, { judul, isi });
             navigate("/");
         } catch (error) {
             console.log(error);
@@ -24,7 +24,7 @@ const EditNote = () => {
 
     const getNoteById = async () => {
         try {
-            const response = await axios.get(`http://35.232.131.240/note/${id}`);
+            const response = await axios.get(`http://35.232.131.240:5000/note/${id}`);
             setJudul(response.data.judul);
             setIsi(response.data.isi);
         } catch (error) {

@@ -10,13 +10,13 @@ const NoteList = () => {
     }, []);
 
     const getNote = async () => {
-        const response = await axios.get('http://35.232.131.240/note');
+        const response = await axios.get('http://35.232.131.240:5000/note');
         setNote(response.data);
     }
 
     const deleteNote = async (id) => {
         try {
-            await axios.delete(`http://35.232.131.240/note/${id}`);
+            await axios.delete(`http://35.232.131.240:5000/note/${id}`);
             getNote();
         } catch (error) {
             console.log(error);
